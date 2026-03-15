@@ -1,0 +1,52 @@
+name: Build Kitap APK
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Node.js o'rnatish
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Frontend kutubxonalarni o'rnatish
+        run: |
+          cd src/frontend
+          npm install
+
+      - name: Reactni Build qilish
+        run: |
+          cd src/frontend
+          npm run build
+
+      - name: Capacitorni sozlash
+        run: |
+          cd src/frontend
+          npm install @capacitor/core @capacitor/android
+          npm install -D @capacitor/cli
+          npx cap init Kitap com.kitap.app --web-dir dist
+          npx cap add android
+          npx cap sync android
+
+      - name: Java o'rnatish
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: APK yig'ish (Gradle)
+        run: |
+          cd src/frontend/android
+          chmod +x ./gradlew
+          ./gradlew assembleDebug
+
+      - name: Tayyor APKni yuklash
+        uses: actions/upload-artifact@v3
+        with:
+          name: Kitap-Mobile-APK
+          path: src/frontend/android/app/build/outputs/apk/debug/app-debug.apk
+          
