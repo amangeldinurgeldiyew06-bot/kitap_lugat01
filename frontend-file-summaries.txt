@@ -1,0 +1,18 @@
+{
+  "frontend/src/App.tsx": "Main application component that handles authentication flow, profile setup modal, and renders the dashboard for authenticated users with the new Kitap logo on welcome and loading screens using object-contain for consistent display.",
+  "frontend/src/contexts/LanguageContext.tsx": "Language context provider managing bilingual interface (Turkmen/English only) with translations for all app features including favorites, quiz modes, and localStorage persistence for Kitap app.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for all backend operations including dictionaries, word pairs, unknown words tracking, favorites tracking (new useToggleFavoriteWord hook), quiz questions with three modes (general/unknown/favorite), and bulk import functionality.",
+  "frontend/src/components/Header.tsx": "Application header displaying the new Kitap logo from kitap-logo-new-transparent.dim_200x200.png with language switcher dropdown and login/logout button, optimized with object-contain for proper logo rendering.",
+  "frontend/src/components/Footer.tsx": "Footer component with copyright notice and caffeine.ai attribution link.",
+  "frontend/src/components/ProfileSetupModal.tsx": "Modal dialog for first-time user profile setup that collects the user's name.",
+  "frontend/src/pages/Dashboard.tsx": "Main dashboard page displaying all user dictionaries with statistics and navigation to dictionary details or quiz modes.",
+  "frontend/src/components/CreateDictionaryDialog.tsx": "Dialog form for creating new dictionaries with name, source language, and target language fields.",
+  "frontend/src/components/DictionaryDetail.tsx": "Detailed view of a single dictionary with three tabs (All Words, Unknown Words, Favorites), buttons for adding words, bulk import, and launching quiz modes for all three collections.",
+  "frontend/src/components/WordList.tsx": "Table component displaying word pairs with star icon toggle for favoriting/unfavoriting, edit and delete actions, and mode-specific empty states for all/unknown/favorites views.",
+  "frontend/src/components/AddWordDialog.tsx": "Dialog form for adding new word pairs to a dictionary.",
+  "frontend/src/components/EditWordDialog.tsx": "Dialog form for editing existing word pairs in a dictionary.",
+  "frontend/src/components/Quiz.tsx": "Interactive quiz component with multiple-choice questions supporting three modes (general/unknown/favorite), tracks score, manages unknown words collection, and updates favorite status based on quiz results.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring purple-themed design tokens for light and dark modes.",
+  "frontend/src/components/BulkImportDialog.tsx": "Dialog form for bulk importing word pairs from text input in \"Word-Translation\" format, one pair per line.",
+  "frontend/index.html": "HTML entry point with updated page title \"Kitap - Dictionary Learning Application\", meta description, and favicon using the new kitap-logo-new-transparent.dim_200x200.png asset."
+}
